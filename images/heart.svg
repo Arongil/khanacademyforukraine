@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="M50 90 C25 65 0 50 0 30 C0 15 15 0 30 0 S50 15 50 30 C50 15 65 0 80 0 S100 15 100 30 C100 50 75 65 50 90Z" fill="url(#ukraineGradient)"/>
+  <defs>
+    <linearGradient id="ukraineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="50%" style="stop-color:#0057B8"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+    </linearGradient>
+  </defs>
+</svg>
