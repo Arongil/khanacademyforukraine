@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Academy for Ukraine</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 80vw;
+            margin: auto;
+            padding: 2vw;
+            background-color: white;
+            box-shadow: 0 0 1vw rgba(0,0,0,0.1);
+        }
+        header {
+            background: #35a79c;
+            color: white;
+            padding: 2vw 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3vw;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2vw 0;
+            flex-wrap: wrap;
+        }
+        .logo {
+            max-width: 20vw;
+            height: auto;
+            margin: 1vw;
+        }
+        .content {
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-bottom: 0.2vw;
+            padding-top: 0.0vw;
+            max-width: 60vw;
+            margin: auto;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #35a79c;
+        }
+        .donate-button {
+            display: block;
+            width: 20vw;
+            height: 5vw;
+            background: #ff9900;
+            color: white;
+            text-align: center;
+            line-height: 5vw;
+            font-size: 1.8vw;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 2vw auto;
+            border-radius: 1.0vw;
+            transition: background 0.3s ease;
+        }
+        .donate-button:hover {
+            background: #e68a00;
+        }
+        .donation-info {
+            font-size: 0.8vw;
+            text-align: center;
+            margin-top: 1vw;
+            color: #666;
+        }
+        .ka-image {
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 2vw auto;
+        }
+        .team-section {
+            text-align: center;
+            margin-top: 4vw;
+        }
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2vw;
+        }
+        .team-member {
+            width: 20vw;
+            margin-bottom: 2vw;
+        }
+        .team-member-image {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 1vw;
+            overflow: hidden;
+        }
+        .team-member-name {
+            font-weight: bold;
+            font-size: 1.2vw;
+            margin-bottom: 0.5vw;
+        }
+        .team-member-title {
+            font-size: 1vw;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 5vw;
+                max-width: 90vw;
+            }
+            .content {
+                padding-left: 2vw;
+                padding-right: 2vw;
+                padding-bottom: 0.2vw;
+                padding-top: 0.2vw;
+                max-width: 80vw;
+            }
+            header h1 {
+                font-size: 6vw;
+            }
+            .logo {
+                max-width: 40vw;
+            }
+            .donate-button {
+                width: 40vw;
+                height: 10vw;
+                line-height: 10vw;
+                font-size: 4vw;
+            }
+            .donation-info {
+                font-size: 2vw;
+            }
+            .team-member {
+                width: 40vw;
+            }
+            .team-member-image {
+                width: 20vw;
+                height: 20vw;
+                overflow: hidden;
+            }
+            .team-member-name {
+                font-size: 3vw;
+            }
+            .team-member-title {
+                font-size: 2.5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Khan Academy for Ukraine</h1>
+        </header>
+        <div class="logo-container">
+            <img src="images/Khan Academy.png" alt="Khan Academy Logo" class="logo">
+            <img src="images/KSE Foundation.png" alt="KSE Foundation Logo" class="logo">
+        </div>
+        <div class="content">
+            <img src="images/You Can Learn Anything UK.png" alt="You Can Learn Anything in Ukrainian" class="ka-image">
+            <a href="https://foundation.kse.ua/en/projects/online-stem-lessons-from-khan-academy/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
+            <p class="donation-info">All donations go to KSE Foundation, a 501(c)(3) nonprofit in the United States and Ukraine, for the localization of Khan Academy.</p>
+            <h2>Empowering Ukrainian Students Through Education</h2>
+            <p>For <span class="highlight">856 days</span>, Ukraine has been at war, leaving <span class="highlight">2 in 5 kids unable to attend school</span>. But what if we could change this story? What if instead of falling behind, kids could get ahead?</p>
+            <p>Meet Nazar Drugov, a Ukrainian high school student who defied the odds. Using free Khan Academy lessons during blackouts and in shelters during bombardments, Nazar secured admission to Tufts University.</p>
+            <p>However, there's a challenge: Khan Academy is primarily in English, and only <span class="highlight">1 in 100 Ukrainians know English</span>.</p>
+            <h3>Our Mission</h3>
+            <p>We're on a mission to translate and localize Khan Academy content into Ukrainian, making STEM education accessible to all 4 million students in Ukraine.</p>
+            <ul>
+                <li>We've already translated algebra basics into Ukrainian.</li>
+                <li>Our next goal is to translate arithmetic and precalculus.</li>
+                <li>We're collaborating with schools to reach every student in Ukraine.</li>
+            </ul>
+            <p>Join us in our effort to provide every Ukrainian student with a free, world-class education through Khan Academy.</p>
+            <a href="https://foundation.kse.ua/en/projects/online-stem-lessons-from-khan-academy/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
+        </div>
+        <p style="text-align: center; font-size: 0.9vw;">Contact: Nazar Drugov (nazar.drugov@tufts.edu) | Laker Newhouse (lakern@mit.edu)</p>
+        <div class="team-section">
+            <h2>Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="team-member-image"><img src="images/Nazar.jpg"</img></div>
+                    <div class="team-member-name">Nazar Drugov</div>
+                    <div class="team-member-title">Founder (Tufts '28)</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-image"><img src="images/Laker.png"</img></div>
+                    <div class="team-member-name">Laker Newhouse</div>
+                    <div class="team-member-title">Founder (MIT '25)</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-image"><img src="images/Tymofiy.jpg"></img></div>
+                    <div class="team-member-name">Tymofiy Mylovanov</div>
+                    <div class="team-member-title">President of Kyiv School of Economics</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-image"><img src="images/Taras.png"></img></div>
+                    <div class="team-member-name">Taras Pavlov</div>
+                    <div class="team-member-title">Lead Translator and Curriculum Expert</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
