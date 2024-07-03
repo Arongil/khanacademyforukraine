@@ -50,6 +50,15 @@
             max-width: 60vw;
             margin: auto;
         }
+        .content p, .content ul {
+            font-size: 2vh;
+        }
+        .content p.donation-info {
+            font-size: 0.8vw;
+            text-align: center;
+            margin-top: 1vw;
+            color: #666;
+        }
         .highlight {
             font-weight: bold;
             color: #35a79c;
@@ -67,19 +76,31 @@
             text-decoration: none;
             margin: 2vw auto;
             border-radius: 1.0vw;
-            transition: background 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
         }
         .donate-button:hover {
             background: #e68a00;
+            transform: scale(1.05);
         }
         .donation-info {
-            font-size: 0.8vw;
+            font-size: 0.8vh;
             text-align: center;
             margin-top: 1vw;
             color: #666;
         }
+        .content-link {
+            color: #35a79c;
+            text-decoration: none;
+            border-bottom: 0.1vw dotted #35a79c;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        .content-link:hover {
+            color: #2c8a81;
+            border-bottom: 0.1vw solid #2c8a81;
+        }
         .ka-image {
-            max-width: 60%;
+            max-width: 70%;
+            min-width: 20vh;
             height: auto;
             display: block;
             margin: 2vw auto;
@@ -125,7 +146,7 @@
             font-size: 1vw;
             color: #666;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
             .container {
                 padding: 5vw;
                 max-width: 90vw;
@@ -137,20 +158,29 @@
                 padding-top: 0.2vw;
                 max-width: 80vw;
             }
+            .content p.donation-info {
+                font-size: 2.0vw;
+            }
             header h1 {
                 font-size: 6vw;
             }
             .logo {
                 max-width: 40vw;
+                margin-left: 1vw;
+                margin-right: 1vw;
             }
             .donate-button {
                 width: 40vw;
                 height: 10vw;
                 line-height: 10vw;
                 font-size: 4vw;
+                border-radius: 2.0vw;
             }
             .donation-info {
                 font-size: 2vw;
+            }
+            .ka-image {
+                min-width: 200px;
             }
             .team-member {
                 width: 40vw;
@@ -158,17 +188,6 @@
             .team-member-image {
                 width: 20vw;
                 height: 20vw;
-                overflow: hidden;
-                position: relative;
-            }
-            .team-member-image img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
             }
             .team-member-name {
                 font-size: 3vw;
@@ -193,40 +212,41 @@
             <a href="https://foundation.kse.ua/en/projects/online-stem-lessons-from-khan-academy/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
             <p class="donation-info">All donations go to KSE Foundation, a 501(c)(3) nonprofit in the United States and Ukraine, for the localization of Khan Academy.</p>
             <h2>Empowering Ukrainian Students Through Education</h2>
-            <p>For <span class="highlight">856 days</span>, Ukraine has been at war, leaving <span class="highlight">2 in 5 kids unable to attend school</span>. But what if we could change this story? What if instead of falling behind, kids could get ahead?</p>
-            <p>Meet Nazar Drugov, a Ukrainian high school student who defied the odds. He studied using free lessons on Khan Academy during blackouts and in shelters during bombardments, and he got into to Tufts University.</p>
-            <p>But there's a challenge: Khan Academy is in English, and only <span class="highlight">1 in 100 Ukrainians knows English</span>.</p>
+            <p>For <span class="highlight">856 days</span>, Ukraine has been at war, leaving <span class="highlight">2 in 5 kids unable to attend school</span>.</p>
+            <p>What if we flip the story? What if instead of falling behind, kids get ahead?</p>
+            <p>Meet Nazar Drugov, a Ukrainian high school student who defied the odds. He studied using free lessons on Khan Academy during blackouts and in shelters during bombardments, and he got into Tufts University.</p>
+            <p>Just one problem: Khan Academy is in English, and only <span class="highlight">1 in 100 Ukrainians knows English</span>.</p>
             <h2>Our Mission</h2>
             <p>We're on a mission to translate and localize Khan Academy content into Ukrainian.</p>
             <ul>
-                <li>We've already translated algebra basics into Ukrainian.</li>
+                <li>We've already translated <a href="https://uk.khanacademy.org/math/algebra-basics" class="content-link">algebra basics</a> into Ukrainian.</li>
                 <li>Our next goal is to translate arithmetic and precalculus.</li>
                 <li>We're collaborating with schools to reach every student in Ukraine.</li>
             </ul>
             <p>Let's make STEM education accessible to <span class="highlight">all 4 million students in Ukraine</span>.</p>
             <a href="https://foundation.kse.ua/en/projects/online-stem-lessons-from-khan-academy/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
         </div>
-        <p style="text-align: center; font-size: 0.9vw;">Contact: Nazar Drugov (nazar.drugov@tufts.edu) | Laker Newhouse (lakern@mit.edu)</p>
+        <p style="text-align: center; font-size: 2.0vh;">Contact: Nazar Drugov (nazar.drugov@tufts.edu) | Laker Newhouse (lakern@mit.edu)</p>
         <div class="team-section">
             <h2>Team</h2>
             <div class="team-members">
                 <div class="team-member">
-                    <div class="team-member-image"><img src="images/Nazar.jpg"</img></div>
+                    <div class="team-member-image"><img src="images/Nazar.jpg" alt="Nazar Drugov"></div>
                     <div class="team-member-name">Nazar Drugov</div>
                     <div class="team-member-title">Founder (Tufts '28)</div>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-image"><img src="images/Laker.png"</img></div>
+                    <div class="team-member-image"><img src="images/Laker.png" alt="Laker Newhouse"></div>
                     <div class="team-member-name">Laker Newhouse</div>
                     <div class="team-member-title">Founder (MIT '25)</div>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-image"><img src="images/Tymofiy.jpg"></img></div>
+                    <div class="team-member-image"><img src="images/Tymofiy.jpg" alt="Tymofiy Mylovanov"></div>
                     <div class="team-member-name">Tymofiy Mylovanov</div>
                     <div class="team-member-title">President of Kyiv School of Economics</div>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-image"><img src="images/Taras.png"></img></div>
+                    <div class="team-member-image"><img src="images/Taras.png" alt="Taras Pavlov"></div>
                     <div class="team-member-name">Taras Pavlov</div>
                     <div class="team-member-title">Lead Translator and Curriculum Expert</div>
                 </div>
