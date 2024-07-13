@@ -54,7 +54,7 @@
         .content {
             padding-left: 2vw;
             padding-right: 2vw;
-            padding-bottom: 0.2vw;
+            padding-bottom: 0.0vw;
             padding-top: 0.0vw;
             max-width: 60vw;
             margin: auto;
@@ -182,6 +182,79 @@
             font-size: 1vw;
             color: #666;
         }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide {
+            width: 85%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0.8vw;
+            object-fit: contain;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+            color: white;
+            font-size: 3vw;
+            padding: 1vw 0.5vw;
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.3s;
+            width: 5%;
+            height: 8vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5vw;
+            z-index: 10;
+        }
+        .nav-button:hover:not(:disabled) {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .nav-button:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+        .prev-button {
+            left: 0;
+        }
+        .next-button {
+            right: 0;
+        }
+        .slide-deck-title {
+            text-align: center;
+            margin-top: 2vw;
+            margin-bottom: 0vw;
+        }
+        .slide-deck-title h2 {
+            margin-bottom: 1vw;
+        }
+        /* End slideshow styles */
+
         @media (max-width: 768px) {
             .container {
                 padding: 5vw;
@@ -190,7 +263,7 @@
             .content {
                 padding-left: 2vw;
                 padding-right: 2vw;
-                padding-bottom: 0.2vw;
+                padding-bottom: 0.0vw;
                 padding-top: 0.2vw;
                 max-width: 80vw;
             }
@@ -234,6 +307,19 @@
             .team-member-title {
                 font-size: 2.5vw;
             }
+
+            .slideshow-container {
+                height: 40%;
+            }
+            .slide {
+                width: 80%;
+            }
+            .nav-button {
+                font-size: 4vh;
+                padding: 4vw 2vw;
+                width: 6%;
+                height: 12vw;
+            }
         }
     </style>
 </head>
@@ -265,7 +351,18 @@
             <p>Let's make STEM education accessible to <span class="highlight">all 4 million students in Ukraine</span>.</p>
             <a href="https://foundation.kse.ua/en/projects/khan-academy-for-ukraine/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
         </div>
-        <p style="text-align: center; font-size: 2.0vh;">Contact: Nazar Drugov (nazar.drugov@tufts.edu) | Laker Newhouse (lakern@mit.edu)</p>
+        <div class="slide-deck-title">
+            <h2>Learn More</h2>
+        </div>
+        <div class="slideshow-container">
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Khan Academy for Ukraine" data-src="slides/slide_1.jpg">
+                </div>
+                <button class="nav-button prev-button" disabled>❮</button>
+                <button class="nav-button next-button">❯</button>
+            </div>
+        </div>
         <div class="team-section">
             <h2>Team</h2>
             <div class="team-members">
@@ -291,65 +388,13 @@
                 </div>
             </div>
         </div>
+        <p style="text-align: center; font-size: 2.0vh;">Contact: Nazar Drugov (nazar.drugov@tufts.edu) | Laker Newhouse (lakern@mit.edu)</p>
     </div>
 
     <div class="hearts-container"></div>
 
-    <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '<img src="images/heart.svg" alt="Ukrainian heart" width="100%" height="100%">';
-            heart.classList.add('floating-heart');
-
-            // Randomly choose left or right side
-            const side = Math.random() < 0.5 ? 'left' : 'right';
-            const position = Math.random() * 8 + 6; // Random position between 6% and 14%
-            heart.style[side] = position + 'vw';
-
-            document.querySelector('.hearts-container').appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 15000);
-
-            // Schedule the next heart creation
-            scheduleNextHeart();
-        }
-
-        function scheduleNextHeart() {
-            // Only actually create the heart if not on mobile
-            if (window.innerWidth > 768) {
-                const delay = Math.random() * 10000 + 10000; // Random delay between 10000ms and 20000ms
-                setTimeout(createHeart, delay);
-            }
-        }
-
-        // Start creating hearts
-        let heartsScheduled = true;
-        scheduleNextHeart();
-
-        // Add event listener for window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth <= 768) {
-                // Remove all existing hearts
-                heartsScheduled = false;
-                document.querySelector('.hearts-container').innerHTML = "";
-            } else if (!heartsScheduled) {
-                // Resume creating hearts
-                heartsScheduled = true;
-                scheduleNextHeart();
-            }
-        });
-
-        // Set day count ("For xxx days Ukraine has been at war, leaving ...")
-        function getDaysSinceWarStart() {
-            const warStartDate = new Date('2022-02-24');
-            const today = new Date();
-            const diffTime = today - warStartDate;
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            return diffDays;
-        }
-        document.getElementById('days-count').textContent = getDaysSinceWarStart() + " days";
-    </script>
+    <script src="days.js"></script>
+    <script src="hearts.js"></script>
+    <script src="slides.js"></script>
 </body>
 </html>
