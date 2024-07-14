@@ -13,6 +13,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         body, html {
             font-family: Arial, sans-serif;
@@ -32,7 +34,7 @@
         header {
             background: #35a79c;
             color: white;
-            padding: 2vw 0;
+            padding: 1vw 0;
             text-align: center;
         }
         header h1 {
@@ -43,7 +45,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 2vw 0;
+            margin: 1.0vw 0;
             flex-wrap: wrap;
         }
         .logo {
@@ -83,7 +85,7 @@
             font-size: 1.8vw;
             font-weight: bold;
             text-decoration: none;
-            margin: 2vw auto;
+            margin: 1.5vw auto;
             border-radius: 1.0vw;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
         }
@@ -112,7 +114,7 @@
             min-width: 20vh;
             height: auto;
             display: block;
-            margin: 2vw auto;
+            margin: 1.0vw auto;
         }
         .hearts-container {
             position: fixed;
@@ -255,6 +257,85 @@
         }
         /* End slideshow styles */
 
+        /* Progress Bar Styles */
+        .progress-container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 2vw;
+            background-color: #e0e0e0;
+            border-radius: 1.5vw;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress {
+            width: 0; /* Start at 0, will be animated with JS */
+            height: 100%;
+            background-color: #3498db;
+            border-radius: 1.5vw;
+            transition: width 1s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite linear;
+        }
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        .progress-text {
+            color: #333;
+            font-weight: 700;
+            font-size: 1.8vw;
+        }
+        .progress-notice {
+            font-size: 1vw;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            margin-bottom: 1vw;
+            position: relative;
+        }
+
+        .progress-notice::before {
+            content: "Double Your Impact: $100K Matching Challenge (US tax-deductible)";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                rgba(52, 152, 219, 0),
+                rgba(52, 152, 219, 0.9),
+                rgba(52, 152, 219, 0));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* End progress bar styles */
+
         @media (max-width: 768px) {
             .container {
                 padding: 5vw;
@@ -320,6 +401,20 @@
                 width: 6%;
                 height: 12vw;
             }
+
+            .progress-bar {
+                height: 4vw;
+                border-radius: 2vw;
+            }
+            .progress {
+                border-radius: 2vw;
+            }
+            .progress-text {
+                font-size: 3.6vw;
+            }
+            .progress-notice {
+                font-size: 2.6vw;
+            }
         }
     </style>
 </head>
@@ -335,6 +430,13 @@
         <div class="content">
             <img src="images/You Can Learn Anything UK.png" alt="You Can Learn Anything in Ukrainian" class="ka-image">
             <a href="https://foundation.kse.ua/en/projects/khan-academy-for-ukraine/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
+            <div class="progress-container">
+                <div class="progress-text">$127,000 raised of $600,000 goal</div>
+                <div class="progress-notice">Double Your Impact: $100K Matching Challenge (US tax-deductible)</div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress-bar"></div>
+                </div>
+            </div>
             <p class="donation-info">All donations go to KSE Foundation, a 501(c)(3) nonprofit in the United States and Ukraine, for the localization of Khan Academy.</p>
             <h2>Empowering Ukrainian Students Through Education</h2>
             <p>For <span id="days-count" class="highlight">more than 800 days</span> Ukraine has been at war, leaving <span class="highlight">2 in 5 kids not able to go to school</span>.</p>
@@ -393,8 +495,9 @@
 
     <div class="hearts-container"></div>
 
-    <script src="days.js"></script>
-    <script src="hearts.js"></script>
-    <script src="slides.js"></script>
+    <script src="js/progressbar.js"></script>
+    <script src="js/days.js"></script>
+    <script src="js/slides.js"></script>
+    <script src="js/hearts.js"></script>
 </body>
 </html>
