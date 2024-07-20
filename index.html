@@ -323,7 +323,7 @@
         }
 
         .progress-notice::before {
-            content: "Double Your Impact: Every Dollar Is Matched Up To $100K (US Tax-Deductible)";
+            content: var(--progress-notice-content, "");
             position: absolute;
             top: 0;
             left: 0;
@@ -456,8 +456,8 @@
             <img src="images/You Can Learn Anything UK.png" alt="You Can Learn Anything in Ukrainian" class="ka-image">
             <a href="https://foundation.kse.ua/en/projects/khan-academy-for-ukraine/?form=FUNFDCXKQPK" class="donate-button">DONATE NOW</a>
             <div class="progress-container">
-                <div class="progress-text">$130,195 raised of $600,000 goal</div>
-                <div class="progress-notice">Double Your Impact: Every Dollar Is Matched Up To $100K (US Tax-Deductible)</div>
+                <div class="progress-text">$<span id="raised-amount">130,604</span> raised of $600,000 goal</div>
+                <div class="progress-notice" id="progress-notice">Double Your Impact: The Next $50K You Give Is Matched (US Tax-Deductible)</div>
                 <div class="progress-bar">
                     <div class="progress" id="progress-bar"></div>
                 </div>
