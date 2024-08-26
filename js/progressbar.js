@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (progressBar) {
         progressBar.style.width = '0%';
         requestAnimationFrame(function() {
-            progressBar.style.width = '21.8%';
+            progressBar.style.width = '22.9%';
         });
     }
 });
@@ -13,7 +13,7 @@ function getMatchedAmount() {
     let initialAmountRaised = 127000;
     let raised = document.getElementById("raised-amount").textContent;
     raised = raised.replace(/,/g, ''); // remove commas
-    let matchingLeft = (initialAmountRaised + matchingTotal) - parseInt(raised);
+    let matchingLeft = (initialAmountRaised + matchingTotal) - parseInt(raised) - 50000; // add anonymous $50K
     return parseInt(matchingLeft / 1000);
 }
 
