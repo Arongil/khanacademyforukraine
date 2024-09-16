@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (progressBar) {
         progressBar.style.width = '0%';
         requestAnimationFrame(function() {
-            progressBar.style.width = '22.9%';
+            progressBar.style.width = '61.6%';
         });
     }
 });
@@ -17,7 +17,7 @@ function getMatchedAmount() {
     return parseInt(matchingLeft / 1000);
 }
 
-let progressNotice = "Double Your Impact: The Next $" + getMatchedAmount().toString() + "K You Give Is Matched (US Tax-Deductible)";
+// let progressNotice = "Double Your Impact: The Next $" + getMatchedAmount().toString() + "K You Give Is Matched (US Tax-Deductible)";
 
-document.getElementById("progress-notice").textContent = progressNotice;
-document.documentElement.style.setProperty("--progress-notice-content", "\"" + progressNotice + "\"");
+// document.getElementById("progress-notice").textContent = progressNotice;
+// document.documentElement.style.setProperty("--progress-notice-content", "\"" + progressNotice + "\"");
