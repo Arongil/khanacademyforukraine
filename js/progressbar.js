@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (progressBar) {
         progressBar.style.width = '0%';
         requestAnimationFrame(function() {
-            progressBar.style.width = '78%';
+            progressBar.style.width = '80%';
         });
     }
 });
